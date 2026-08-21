@@ -2,30 +2,49 @@ const mongoose = require("mongoose");
 
 const serviceSchema = new mongoose.Schema(
   {
-    category:{
-        type:mongoose.Types.ObjectId,
-        required:true
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
+      required: true,
+      index: true,
     },
+
     name: {
       type: String,
-      unique: true,
+      required: true,
       trim: true,
     },
-    desc:{
-      type:String,
-      required:true
+
+    description: {
+      type: String,
+      trim: true,
     },
+
+    image: {
+      type: String,
+      trim: true,
+    },
+
+    price: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+
     duration: {
       type: Number,
-      default: 60,
+      required: true,
+      min: 1,
     },
-    imageLink:{
-        type:String,
-    }
+
+    isActive: {
+      type: Boolean,
+      default: true,
+    },
   },
   {
     timestamps: true,
   }
 );
 
-module.exports = mongoose.model("Service",serviceSchema);
+module.exports = mongoose.model("Service", serviceSchema);
