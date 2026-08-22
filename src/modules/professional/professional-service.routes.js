@@ -1,7 +1,7 @@
 const express = require("express");
 
-const bookingController =
-  require("./booking.controller");
+const controller =
+  require("./professional-service.controller");
 
 const authMiddleware =
   require("../../middlewares/auth.middleware");
@@ -13,27 +13,22 @@ const router = express.Router();
 
 router.use(
   authMiddleware,
-  roleMiddleware("CUSTOMER")
+  roleMiddleware("PROFESSIONAL")
 );
 
 router.post(
   "/",
-  bookingController.createBooking
+  controller.addService
 );
 
 router.get(
   "/",
-  bookingController.getCustomerBookings
+  controller.getServices
 );
 
-router.get(
-  "/:id",
-  bookingController.getBookingById
-);
-
-router.post(
-  "/:id/cancel",
-  bookingController.cancelBooking
+router.delete(
+  "/:serviceId",
+  controller.removeService
 );
 
 module.exports = router;
