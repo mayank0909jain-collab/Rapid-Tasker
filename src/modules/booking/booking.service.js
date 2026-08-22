@@ -1,5 +1,5 @@
 const Booking = require("../../models/booking");
-const Service = require("../../models/Service");
+const Service = require("../../models/service");
 const Address = require("../../models/address");
 const BookingStatusHistory =
   require("../../models/bookingStatusHistory");

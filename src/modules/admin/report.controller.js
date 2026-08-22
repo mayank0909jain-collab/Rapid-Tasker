@@ -2,10 +2,10 @@ const Booking =
   require("../../models/booking");
 
 const User =
-  require("../../models/User");
+  require("../../models/user");
 
 const Service =
-  require("../../models/Service");
+  require("../../models/service");
 
 const getOverviewReport = async (
   req,

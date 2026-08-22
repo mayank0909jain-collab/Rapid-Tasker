@@ -1,5 +1,5 @@
 const Service =
-  require("../../models/Service");
+  require("../../models/service");
 
 const createService = async (data) => {
   const {

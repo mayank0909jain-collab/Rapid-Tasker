@@ -5,7 +5,7 @@ const ProfessionalService =
   require("../../models/professionalServices");
 
 const Service =
-  require("../../models/Service");
+  require("../../models/service");
 
 const addService = async (
   userId,

@@ -1,6 +1,6 @@
-const User = require("../../models/User");
+const User = require("../../models/user");
 const Booking = require("../../models/booking");
-const Service = require("../../models/Service");
+const Service = require("../../models/service");
 const Professional =
   require("../../models/professional");
 

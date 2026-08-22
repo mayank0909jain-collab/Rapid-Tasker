@@ -2,9 +2,9 @@ const Professional =
   require("../../models/professional");
 
 const KycDocument =
-  require("../../models/KycDocument");
+  require("../../models/kycDocument");
 
-const User = require("../../models/User");
+const User = require("../../models/user");
 
 const ProfessionalService =
   require("../../models/professionalServices");
