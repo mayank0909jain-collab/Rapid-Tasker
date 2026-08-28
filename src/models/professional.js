@@ -65,6 +65,36 @@ const professionalSchema = new mongoose.Schema(
       ],
       default: "NOT_SUBMITTED",
     },
+
+    isOnline: {
+      type: Boolean,
+      default: true,
+    },
+
+    rating: {
+      type: Number,
+      default: 5.0,
+      min: 0,
+      max: 5,
+    },
+
+    ratingsCount: {
+      type: Number,
+      default: 0,
+      min: 0,
+    },
+
+    totalEarnings: {
+      type: Number,
+      default: 0,
+      min: 0,
+    },
+
+    completedJobsCount: {
+      type: Number,
+      default: 0,
+      min: 0,
+    },
   },
   {
     timestamps: true,

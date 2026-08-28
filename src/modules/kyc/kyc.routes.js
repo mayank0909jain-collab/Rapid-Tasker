@@ -4,10 +4,10 @@ const kycController =
   require("./kyc.controller");
 
 const authMiddleware =
-  require("../../middleware/auth.middleware");
+  require("../../middlewares/auth.middleware");
 
 const roleMiddleware =
-  require("../../middleware/role.middleware");
+  require("../../middlewares/role.middleware");
 
 const router = express.Router();
 

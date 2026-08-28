@@ -54,7 +54,7 @@ const sendOtp = async ({ phone, email }) => {
   };
 };
 
-const verifyOtp = async ({ phone, email }, otp) => {
+const verifyOtp = async ({ phone, email }, otp, role = "CUSTOMER") => {
   if (!phone && !email) {
     throw new Error("Phone number or email is required");
   }
@@ -77,8 +77,14 @@ const verifyOtp = async ({ phone, email }, otp) => {
   if (!user) {
     user = await User.create({
       ...userQuery,
-      role: "CUSTOMER",
+      role: role || "CUSTOMER",
     });
+  } else {
+    // If a specific role was requested for login (e.g., ADMIN panel)
+    // and the user exists but does not have that role, deny access.
+    if (role && user.role !== role) {
+      throw new Error(`Access denied. This account does not have ${role} privileges.`);
+    }
   }
 
   await Otp.deleteOne({ _id: otpRecord._id });

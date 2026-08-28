@@ -7,8 +7,11 @@ const bookingRoutes = require('./modules/booking/booking.routes');
 const addressRoutes = require('./modules/address/address.routes');
 const professionalRoutes = require('./modules/professional/professional_routes');
 const professionalServiceRoutes = require('./modules/professional/professional-service.routes');
+const professionalBookingRoutes = require('./modules/professional/professional-booking.routes');
+const kycRoutes = require('./modules/kyc/kyc.routes');
 const adminRoutes = require('./modules/admin/admin.routes');
 const customerRoutes = require('./modules/customer/customer.routes');
+const reviewRoutes = require('./modules/review/review.routes');
 const app = express();
 
 app.use(cors());
@@ -23,7 +26,10 @@ app.use('/api/v1/address',addressRoutes);
 app.use('/api/v1/customer',customerRoutes);
 app.use('/api/v1/professional',professionalRoutes);
 app.use('/api/v1/professional-service',professionalServiceRoutes);
+app.use('/api/v1/professional-booking',professionalBookingRoutes);
+app.use('/api/v1/kyc',kycRoutes);
 app.use('/api/v1/admin',adminRoutes);
+app.use('/api/v1/review',reviewRoutes);
 app.get("/api/health", (req, res) => {
   res.status(200).json({
     success: true,

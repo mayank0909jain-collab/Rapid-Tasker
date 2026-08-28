@@ -197,4 +197,37 @@ router.get(
   reportController.getTopServicesReport
 );
 
+/*
+|--------------------------------------------------------------------------
+| Payments
+|--------------------------------------------------------------------------
+*/
+
+router.get(
+  "/payments",
+  (req, res) => res.status(200).json({ success: true, data: { payments: [] } })
+);
+
+/*
+|--------------------------------------------------------------------------
+| Commissions
+|--------------------------------------------------------------------------
+*/
+
+router.get(
+  "/commissions",
+  (req, res) => res.status(200).json({ success: true, data: { commissions: [] } })
+);
+
+/*
+|--------------------------------------------------------------------------
+| Reviews
+|--------------------------------------------------------------------------
+*/
+
+router.get(
+  "/reviews",
+  (req, res) => res.status(200).json({ success: true, data: { reviews: [] } })
+);
+
 module.exports = router;

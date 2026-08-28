@@ -24,7 +24,7 @@ const sendOtp = async (req, res, next) => {
 
 const verifyOtp = async (req, res, next) => {
   try {
-    const { phone, email, otp } = req.body;
+    const { phone, email, otp, role } = req.body;
 
     if ((!phone && !email) || !otp) {
       return res.status(400).json({
@@ -33,7 +33,7 @@ const verifyOtp = async (req, res, next) => {
       });
     }
 
-    const result = await authService.verifyOtp({ phone, email }, otp);
+    const result = await authService.verifyOtp({ phone, email }, otp, role);
 
     res.status(200).json({
       success: true,
